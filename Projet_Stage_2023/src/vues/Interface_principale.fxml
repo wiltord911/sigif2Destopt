@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="673.0" prefWidth="1275.0" styleClass="parent" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Interface_principaleController">
+   <top>
+      <AnchorPane prefHeight="93.0" prefWidth="1275.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar layoutY="6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Administration">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#login" text="Connexion" />
+                        <MenuItem mnemonicParsing="false" onAction="#account" text="Mon compte" />
+                        <CheckMenuItem mnemonicParsing="false" onAction="#offmode" text="Mode hors connexion" />
+                        <MenuItem mnemonicParsing="false" onAction="#setting" text="Paramètres" />
+                        <MenuItem mnemonicParsing="false" onAction="#miseajour" text="Mise à jour des profils" />
+                        <MenuItem mnemonicParsing="false" onAction="#signO" text="Déconnexion" />
+                        <MenuItem mnemonicParsing="false" onAction="#signO_E" text="Déconnexion &amp; quitter" />
+                        <MenuItem mnemonicParsing="false" onAction="#cleanDB" text="Vider la base de données" />
+                  </items>
+                </Menu>
+                <Menu fx:id="menudonneReference" disable="true" mnemonicParsing="false" text="Données de reférences">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#btn_miseajour" text="Mise à jour des données" />
+                        <MenuItem mnemonicParsing="false" onAction="#btn_telechargement" text="Téléchargement par type de données" />
+                        <MenuItem mnemonicParsing="false" onAction="#btn_essence" text="Essences" />
+                        <Menu mnemonicParsing="false" text="Localités">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Arrond/Communes" />
+                              <MenuItem mnemonicParsing="false" text="Département" />
+                              <MenuItem mnemonicParsing="false" text="Région" />
+                              <MenuItem mnemonicParsing="false" text="Pays" />
+                              <MenuItem mnemonicParsing="false" text="Continents" />
+                          </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Types de sites ">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Sites MINFOF" />
+                              <Menu mnemonicParsing="false" text="Parcs">
+                                <items>
+                                    <Menu mnemonicParsing="false" text="Parc Forêts">
+                                      <items>
+                                        <MenuItem mnemonicParsing="false" text="Titre Forestier" />
+                                          <MenuItem mnemonicParsing="false" text="ARB/AEB/ACP" />
+                                          <MenuItem mnemonicParsing="false" text="Permis Bois Oeuvre" />
+                                      </items>
+                                    </Menu>
+                                  <MenuItem mnemonicParsing="false" text="Parcs ruptures" />
+                                    <MenuItem mnemonicParsing="false" text="Parc usines" />
+                                    <MenuItem mnemonicParsing="false" text="Parcs EXPORT/PORT" />
+                                </items>
+                              </Menu>
+                              <MenuItem mnemonicParsing="false" text="Check ponts" />
+                              <MenuItem mnemonicParsing="false" text="Permis spécial" />
+                              <MenuItem mnemonicParsing="false" text="Sites CEMAC" />
+                              <MenuItem mnemonicParsing="false" text="UTB" />
+                              <Menu mnemonicParsing="false" text="Autres Sites">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Délégation régionale" />
+                                    <MenuItem mnemonicParsing="false" text="Délégation Départementale" />
+                                 </items>
+                              </Menu>
+                           </items>
+                        </Menu>
+                        <MenuItem mnemonicParsing="false" onAction="#btn_autreEntite" text="Autres entités" />
+                        <MenuItem mnemonicParsing="false" onAction="#btn_typeinfra" text="Type d'infraction" />
+                        <MenuItem mnemonicParsing="false" onAction="#btn_zoneexploi" text="Zone d'exploitation" />
+                        <MenuItem mnemonicParsing="false" onAction="#btn_valeurFOB" text="Valeurs FOB par essence" />
+                        <MenuItem mnemonicParsing="false" onAction="#btn_traitesyvi" text="Traitement sylvicoles" />
+                        <MenuItem mnemonicParsing="false" onAction="#btn_classeqlte" text="Classes de qualités" />
+                        <Menu mnemonicParsing="false" text="Sociétés">
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#btn_OPF" text="Opérateur Forestier National" />
+                              <MenuItem mnemonicParsing="false" onAction="#btn_OFP" text="Opérateur Forestier CEMAC" />
+                              <MenuItem mnemonicParsing="false" onAction="#btn_FC" text="Forêts Communales" />
+                              <MenuItem mnemonicParsing="false" onAction="#btn_foretC" text="Forêts Communautaires" />
+                              <MenuItem mnemonicParsing="false" onAction="#btn_minfof" text="MINFOF" />
+                              <MenuItem mnemonicParsing="false" onAction="#btn_autre" text="Autres" />
+                          </items>
+                        </Menu>
+                        <MenuItem mnemonicParsing="false" onAction="#btn_entiteFores" text="Entités Forestières" />
+                        <MenuItem mnemonicParsing="false" onAction="#btn_typeProduit" text="Types de produits" />
+                  </items>
+                </Menu>
+                <Menu fx:id="menutitreforestier" disable="true" mnemonicParsing="false" text="Titres forestiers">
+                  <items>
+                        <Menu mnemonicParsing="false" text="Concessions">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Titres Forestiers" />
+                              <MenuItem mnemonicParsing="false" text="Conventions procisoires" />
+                              <MenuItem mnemonicParsing="false" text="Conventions définitives" />
+                          </items>
+                        </Menu>
+                    <MenuItem mnemonicParsing="false" text="Vente coupe" />
+                        <MenuItem mnemonicParsing="false" text="Forêts communales" />
+                        <Menu mnemonicParsing="false" text="Forêts communautaires">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Forêts communautaires CP" />
+                              <MenuItem mnemonicParsing="false" text="Forêts communautaires CD" />
+                          </items>
+                        </Menu>
+                        <MenuItem mnemonicParsing="false" text="Permis bois d'oeuvre" />
+                        <MenuItem mnemonicParsing="false" text="ARB" />
+                        <MenuItem mnemonicParsing="false" text="APC" />
+                        <MenuItem mnemonicParsing="false" text="Permis spécial" />
+                        <MenuItem mnemonicParsing="false" text="AEB/VEP" />
+                        <MenuItem mnemonicParsing="false" text="Mise à jour des titres" />
+                  </items>
+                </Menu>
+                  <Menu fx:id="menucodebarre" disable="true" mnemonicParsing="false" text="Code barres">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Demandes des codes barres" />
+                        <MenuItem mnemonicParsing="false" text="Synchroniser les demandes" />
+                        <MenuItem mnemonicParsing="false" text="Vérification des codes" />
+                        <MenuItem mnemonicParsing="false" text="Export des codes barres" />
+                        <MenuItem mnemonicParsing="false" text="Mise à jour des codes barres" />
+                        <MenuItem mnemonicParsing="false" text="Télécharger tous les codes barres" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="menuInventaire" disable="true" mnemonicParsing="false" text="Inventaires">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Inventaires Concessions" />
+                        <MenuItem mnemonicParsing="false" text="Inventaires Vente de Coupe" />
+                        <MenuItem mnemonicParsing="false" text="Inventaires Forêts" />
+                        <MenuItem mnemonicParsing="false" text="Inventaires Catalogue" />
+                        <MenuItem mnemonicParsing="false" text="Inventaires Permis" />
+                        <MenuItem mnemonicParsing="false" text="Importer un inventaire" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="menuAbattage" disable="true" mnemonicParsing="false" text="Abattage">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Gestion des lots d'abattage(FD10)" />
+                        <MenuItem mnemonicParsing="false" text="Liste des abattages" />
+                        <MenuItem mnemonicParsing="false" text="Mise à jour des permis" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="menuOperationParc" disable="true" mnemonicParsing="false" text="Opérations de parc">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Entrées parc" />
+                        <MenuItem mnemonicParsing="false" text="Lettres de voiture" />
+                        <MenuItem mnemonicParsing="false" text="Import lot lot de Grume PF" />
+                        <MenuItem mnemonicParsing="false" text="Billonage" />
+                        <MenuItem mnemonicParsing="false" text="Import Grumes Filles" />
+                        <MenuItem mnemonicParsing="false" text="Mise à jour des opérations de parcs" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="menuTransformation" disable="true" mnemonicParsing="false" text="Transformation">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Lignes de transformation" />
+                        <MenuItem mnemonicParsing="false" text="Rendement matière" />
+                        <Menu mnemonicParsing="false" text="Entrées d'usinages">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Entrées Grume" />
+                              <MenuItem mnemonicParsing="false" text="Entrées Colis" />
+                          </items>
+                        </Menu>
+                        <MenuItem mnemonicParsing="false" text="Production" />
+                        <MenuItem mnemonicParsing="false" text="Mise à jour des données de transformation" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="menuBoisCemac" disable="true" mnemonicParsing="false" text="Bois CEMAC">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Entité foretière CEMAC" />
+                        <MenuItem mnemonicParsing="false" text="Sites CEMAC" />
+                        <MenuItem mnemonicParsing="false" text="Lettres de voiture CEMAC" />
+                        <MenuItem mnemonicParsing="false" text="Entrées en parc CEMAC" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="menuControle" disable="true" mnemonicParsing="false" text="Contrôle">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Traçabilité" />
+                     </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+            <BorderPane layoutX="126.0" layoutY="31.0" prefHeight="65.0" prefWidth="1275.0" styleClass="agreen-pane" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <left>
+                  <Pane prefHeight="86.0" prefWidth="544.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <ImageView layoutX="12.0" layoutY="17.0">
+                           <image>
+                              <Image url="@../../../../Downloads/a%20ressources/icons/Essences_32x32.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="449.0" layoutY="17.0">
+                           <image>
+                              <Image url="@../../../../Downloads/a%20ressources/icons/Clsse_Qualite_32x32.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="406.0" layoutY="17.0">
+                           <image>
+                              <Image url="@../../../../Downloads/a%20ressources/icons/Entites_Forestieres_32x32.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="493.0" layoutY="17.0">
+                           <image>
+                              <Image url="@../../../../Downloads/a%20ressources/icons/iconADMINISTRATION_32x32.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="90.0" layoutY="17.0">
+                           <image>
+                              <Image url="@../../../../Downloads/a%20ressources/icons/iconABATTAGE_32x32.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="51.0" layoutY="17.0">
+                           <image>
+                              <Image url="@../../../../Downloads/a%20ressources/icons/iconINVENTAIRE_32x32.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="327.0" layoutY="17.0">
+                           <image>
+                              <Image url="@../../../../Downloads/a%20ressources/icons/Parcs_Foret_32x32.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="367.0" layoutY="17.0">
+                           <image>
+                              <Image url="@../../../../Downloads/a%20ressources/icons/Parcs_Usine_32x32.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="169.0" layoutY="17.0">
+                           <image>
+                              <Image url="@../../../../Downloads/a%20ressources/icons/Parcs_Rupture_32x32.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="287.0" layoutY="17.0">
+                           <image>
+                              <Image url="@../../../../Downloads/a%20ressources/icons/Societe_CEMAC_32x32.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="208.0" layoutY="17.0">
+                           <image>
+                              <Image url="@../../../../Downloads/a%20ressources/icons/Types_Produits_32x32.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="128.0" layoutY="17.0">
+                           <image>
+                              <Image url="@../../../../Downloads/a%20ressources/icons/iconTRANSFORMATION_32x32.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="246.0" layoutY="17.0">
+                           <image>
+                              <Image url="@../../../../Downloads/a%20ressources/icons/Traitements_Sylvicoles_32x32.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </left>
+               <right>
+                  <Pane prefHeight="86.0" prefWidth="338.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <ImageView fitHeight="56.0" fitWidth="60.0" layoutX="271.0" layoutY="5.0">
+                           <image>
+                              <Image url="@../../../../Downloads/a%20ressources/icons/logoMINFOF_64x64.png" />
+                           </image>
+                        </ImageView>
+                        <ToggleButton layoutX="92.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="93.0" text="FR/EN" />
+                     </children>
+                  </Pane>
+               </right>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="48.0" prefWidth="1275.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Mentions légale SIGIF MINFOF  @2015 Tous les droit reserves    Realisation : MINFOF">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="810.0" layoutY="14.0" text="Derniere synchronisation le :" />
+            <Label layoutX="1075.0" layoutY="14.0" text="Taille du fichier :" />
+         </children>
+      </AnchorPane>
+   </bottom>
+   <center>
+      <AnchorPane fx:id="root" prefHeight="532.0" prefWidth="1073.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
